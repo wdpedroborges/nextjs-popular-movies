@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { Movie } from './Movie'
 
@@ -14,7 +13,13 @@ export default async function Home() {
       <div className="grid gap-16 lg:grid-cols-3 sm:grid-cols-1 p-10">
         {
           movies.map((movie: any, index: number) => {
-            return <Movie key={index} title={movie.original_title} id={movie.id} releaseDate={movie.release_date} imgSrc={movie.poster_path}/>
+            return <Movie
+                key={index}
+                title={movie.original_title}
+                id={movie.id}
+                releaseDate={movie.release_date}
+                imgSrc={movie.poster_path}
+              />
           })
         }
       </div>
